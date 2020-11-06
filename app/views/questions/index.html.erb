@@ -1,0 +1,21 @@
+<ul class="nav navbar-nav">
+ <% if user_signed_in? %>
+  <p><%= link_to "New Question", new_question_path, class: "navbar-right navbar-text navbar-link" %></p>
+<% end%> 
+</ul>
+
+<% @questions.each do |question| %>
+<div>
+    <div class="question">
+      <h2 class="q-title"><%= question.title %></h2>
+      <% if user_signed_in? %>
+        
+          <%= link_to "View Question", question_path(question), class: "btn btn-default" %> 
+    
+      <%end %>
+     
+    </div>
+</div>
+
+<% end %>
+

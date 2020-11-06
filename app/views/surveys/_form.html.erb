@@ -1,0 +1,57 @@
+
+<%= simple_form_for(@survey) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div>
+  <div class="field">
+      <%= f.label :size, "What size dog would you prefer?" %>
+      <%= f.select :size, ['Toy', 'Small', 'Medium', 'Large', 'X-Large'] %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :appartment, "Do you have an appartment?" %><br/>
+      <%= f.label :appartment, "Yes", :value => "true" %>
+      <%= f.radio_button :appartment, "yes" %>
+      <%= f.label :appartment, "No", :value => "false" %>
+      <%= f.radio_button :appartment, "no" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :shed, "How much will the dog shed?" %>
+      <%= f.select :shed, ['Low-Light', 'Moderate', 'Heavy'] %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :energy, "Dog energy level?" %>
+      <%= f.select :energy, ['Low', 'Moderate', 'High'] %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :garden, "Do you have a back garden?" %><br/>
+      <%= f.label :garden, "Yes", :value => "true" %>
+      <%= f.radio_button :garden, "yes" %>
+      <%= f.label :garden, "No", :value => "false" %>
+      <%= f.radio_button :garden, "no" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :children, "Do you have young children?" %><br/>
+      <%= f.label :children, "Yes", :value => "true" %>
+      <%= f.radio_button :children, "yes" %>
+      <%= f.label :children, "No", :value => "false" %>
+      <%= f.radio_button :children, "no" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :wh, "Do you work work long hours away from home?" %><br/>
+      <%= f.label :wh, "Yes", :value => "true" %>
+      <%= f.radio_button :wh, "yes" %>
+      <%= f.label :wh, "No", :value => "false" %>
+      <%= f.radio_button :wh, "no" %>
+    </div>
+  
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  </div>
+<% end %>

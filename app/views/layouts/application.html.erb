@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to "Home", root_path, class: "navbar-brand" %>
+         
+        </div>
+        <ul class="nav navbar-nav">
+           <li><%= link_to "Survey", new_survey_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Blog", posts_path %></li>
+            <li><%= link_to "Advise", questions_path %></li>
+             <li><%= link_to "Dog Health", static_pages_health_path %></li>
+            <li><%= link_to "Reviews", static_pages_review_path %></li>
+          <% end %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% if user_signed_in? %>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li
+          <% else %>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <% end %>
+        </ul>
+       
+        
+          <div class="navbar-group pull-right right-nav">
+            <button type="button" class="btn-mimi dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+              <span clas="sr-only">Dogs</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "Toy", static_pages_toy_path %></li>
+              <li><%= link_to "Small", static_pages_small_path %></li>
+              <li><%= link_to "Medium", static_pages_medium_path %></li>
+              <li><%= link_to "Large", static_pages_large_path %></li>
+              <li><%= link_to "XLarge", static_pages_xlarge_path %></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+       
+    <%= yield %>
+  </body>
+</html>

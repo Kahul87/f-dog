@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  size: MyString
+  appartment: 
+  shed: MyString
+  energy: MyString
+  garden: 
+  children: 
+  wh: 
+
+two:
+  size: MyString
+  appartment: 
+  shed: MyString
+  energy: MyString
+  garden: 
+  children: 
+  wh: 

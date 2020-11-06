@@ -1,0 +1,133 @@
+<div class= "container">
+  <p id="notice"><%= notice %></p>
+  
+  <p>
+    <strong>Size:</strong>
+    <%= @survey.size %>
+  </p>
+  
+  <p>
+    <strong>Appartment:</strong>
+    <%= @survey.appartment %>
+  </p>
+  
+  <p>
+    <strong>Shed:</strong>
+    <%= @survey.shed %>
+  </p>
+  
+  <p>
+    <strong>Energy:</strong>
+    <%= @survey.energy %>
+  </p>
+  
+  <p>
+    <strong>Garden:</strong>
+    <%= @survey.garden %>
+  </p>
+  
+  <p>
+    <strong>Children:</strong>
+    <%= @survey.children %>
+  </p>
+  
+  <p>
+    <strong>Work Long Hours:</strong>
+    <%= @survey.wh %>
+  </p>
+  
+  
+  <p>Results:</p>
+  <% if @survey.size == 'Toy' && @survey.shed == 'Low-Light'  && @survey.energy == 'Moderate' && @survey.children == 'no' && @survey.wh == 'yes'%>
+  <li><%= link_to 'Shi Tzu', static_pages_toy_path, :class => "t2" %></li>
+  <% elsif @survey.size == 'Toy' && @survey.shed == 'Low-Light'  && @survey.energy == 'Moderate' && @survey.children == 'yes' && @survey.wh == 'no'%>
+  <li><%= link_to 'Bichan Friese', static_pages_toy_path %></li>
+  <% elsif @survey.size == 'Toy' && @survey.shed == 'Low-Light'  && @survey.energy == 'Moderate' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Shi Tzu', static_pages_toy_path %></li>
+  <li><%= link_to 'Bichan Friese', static_pages_toy_path%></li>
+  <li><%= link_to 'Maltese', static_pages_toy_path %></li>
+  <% elsif @survey.size == 'Toy' && @survey.shed == 'Low-Light'  && @survey.energy == 'High'%>
+  <li><%= link_to 'Yorkshire Terrier', static_pages_toy_path %></li>
+  <% elsif @survey.size == 'Toy' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Pomeranian', static_pages_toy_path %></li>
+  <% elsif @survey.size == 'Toy' && @survey.shed == 'Moderate'  && @survey.energy == 'High' && @survey.children == 'yes' && @survey.wh == 'no'%>
+  <li><%= link_to 'Chihuahua', static_pages_toy_path %></li>
+  <% elsif @survey.size == 'Small' && @survey.appartment == 'no' && @survey.shed == 'Low-Light'  && @survey.energy == 'High' && @survey.children == 'no' && @survey.wh == 'yes'%>
+  <li><%= link_to 'West Highland Terrier', static_pages_small_path %></li> 
+  <% elsif @survey.size == 'Small' && @survey.appartment == 'no' && @survey.shed == 'Moderate' && @survey.energy == 'High'%>
+  <li><%= link_to 'Jack Russel Terrier', static_pages_small_path %></li>
+  <% elsif @survey.size == 'Small' && @survey.appartment == 'no' && @survey.shed == 'High' && @survey.energy == 'High'%>
+  <li><%= link_to 'Jack Russel Terrier', static_pages_small_path %></li>
+  <% elsif @survey.size == 'Small' && @survey.appartment == 'yes' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.children == 'yes' && @survey.wh == 'yes'%>
+  <li><%= link_to 'Cocker Spaniel', static_pages_small_path %></li>
+  <% elsif @survey.size == 'Small' && @survey.appartment == 'yes' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.children == 'yes' && @survey.wh == 'no'%>
+  <li><%= link_to 'Cavalier King Charles Spaniel', static_pages_small_path %></li>
+  <li><%= link_to 'Beagle', static_pages_small_path %></li>
+  <li><%= link_to 'Daschund', static_pages_small_path %></li>
+  <% elsif @survey.size == 'Small' && @survey.appartment == 'yes' && @survey.shed == 'Heavy'  && @survey.energy == 'Moderate' && @survey.children == 'yes' && @survey.wh == 'no'%>
+  <li><%= link_to 'Pug', static_pages_small_path %></li>
+  <% elsif @survey.size == 'Small' && @survey.appartment == 'yes' && @survey.shed == 'Moderate'  && @survey.energy == 'High' && @survey.children == 'yes' && @survey.wh == 'no'%>
+  <li><%= link_to 'Daschund', static_pages_small_path %></li>
+  <% elsif @survey.size == 'Medium' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'High' && quiz.garden == 'yes' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Border Collie', static_pages_medium_path %></li>
+  <% elsif @survey.size == 'Medium' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Low' && @survey.garden == 'no' && @survey.children == 'yes' && @survey.wh == 'no'%>
+  <li><%= link_to 'Bulldog', static_pages_mediums_path %></li>
+  <% elsif @survey.size == 'Medium' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.garden == 'yes' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Basset Hound', static_pages_medium_path %></li>
+  <% elsif @survey.size == 'Medium' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.garden == 'no' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Whippet', static_pages_medium_path %></li>
+  <% elsif @survey.size == 'Medium' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.garden == 'no' && @survey.children == 'no' && @survey.wh == 'yes'%>
+  <li><%= link_to 'Staffy Bull Terrior', static_pages_medium_path %></li>
+  <% elsif @survey.size == 'Medium' && @survey.appartment == 'no' && @survey.shed == 'Heavy'  && @survey.energy == 'Moderate' && @survey.garden == 'no' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%=link_to 'Samoyed', static_pages_medium_path %></li>
+  <% elsif @survey.size == 'Large' && @survey.appartment == 'yes' && @survey.shed == 'Low-Light'  && @survey.energy == 'Moderate' && @survey.garden == 'no' && @survey.children == 'no' && @survey.wh == 'yes'%>
+  <li><%= link_to 'Poodle Standard', static_pages_large_path %></li>
+  <% elsif @survey.size == 'Large' && @survey.appartment == 'yes' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.garden == 'no' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'German Shephard', static_pages_large_path %>
+  <li><%=link_to 'Greyhound', static_pages_large_path %></li>
+  <% elsif @survey.size == 'Large' && @survey.appartment == 'yes' && @survey.shed == 'Moderate'  && @survey.energy == 'Low' && @survey.garden == 'no' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Greyhound', static_pages_large_path %></li>
+  <% elsif @survey.size == 'Large' && @survey.appartment == 'yes' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.garden == 'yes' && @survey.children == 'yes' && @survey.wh == 'yes'%>
+  <li><%= link_to 'Golden Retriever', static_pages_large_path %></li>
+  <% elsif @survey.size == 'Large' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'High' && @survey.garden == 'yes' && @survey.children == 'yes' && @survey.wh == 'no'%>
+  <li><%=link_to 'Labrador', static_pages_large_path %></li>
+  <li><%= link_to 'Boxer', static_pages_large_path %></li>
+  <% elsif @survey.size == 'Large' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.garden == 'yes' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Labrador', static_pages_large_path %></li>
+  <li><%= link_to 'Boxer', static_pages_large_path %></li>
+  <li><%= link_to 'Rotweiler', static_pages_large_path %></li>
+  <% elsif @survey.size == 'Large' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'High' && @survey.garden == 'yes' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Labrador', static_pages_large_path %></li>
+  <li><%= link_to 'Boxer', static_pages_large_path %></li>
+  <li><%= link_to 'Doberman', static_pages_large_path %></li>
+  <% elsif @survey.size == 'Large' && @survey.appartment == 'no' && @survey.shed == 'Heavy'  && @survey.energy == 'Moderate' && @survey.garden == 'yes' && @survey.children == 'no' && @survey.wh == 'yes'%>
+  <li><%= link_to 'Siberian Husky', static_pages_large_path %></li>
+  <% elsif @survey.size == 'X-Large' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Low' && @survey.garden == 'yes' && @survey.children == 'no' && @survey.wh == 'yes'%>
+  <li><%= link_to 'Irish Wolfhound', static_pages_xlarge_path %></li>
+  <li><%= link_to 'Scottish Deerhound', static_pages_xlarge_path %></li>
+  <li><%= link_to 'St Bernard', static_pages_xlarge_path %></li>
+  <% elsif @survey.size == 'X-Large' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Low' && @survey.garden == 'yes' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Irish Wolfhound', static_pages_xlarge_path %></li>
+  <li><%= link_to 'Scottish Deerhound', static_pages_xlarge_path %></li>
+  <li><%= link_to 'St Bernard', static_pages_xlarge_path %></li>
+  <li><%= link_to 'Mastiff', static_pages_xlarge_path %></li>
+  <li><%= link_to 'Tibetan Mastiff', static_pages_xlarge_path %></li>
+  <% elsif @survey.size == 'X-Large' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.garden == 'yes' && @survey.children == 'no' && @survey.wh == 'no'%>
+  <li><%= link_to 'Great Dane', static_pages_xlarge_path %></li>
+  <li><%= link_to 'Scottish Deerhound', static_pages_xlarge_path %></li>
+  <li><%= link_to 'St Bernard', static_pages_xlarge_path %></li>
+  <% elsif @survey.size == 'X-Large' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.garden == 'yes' && @survey.children == 'no' && @survey.wh == 'yes'%>
+  <li><%= link_to 'Scottish Deerhound', static_pages_xlarge_path %></li>
+  <li><%= link_to 'St Bernard', static_pages_xlarge_path %></li>
+  <% elsif @survey.size == 'X-Large' && @survey.appartment == 'no' && @survey.shed == 'Moderate'  && @survey.energy == 'Moderate' && @survey.garden == 'no' && @survey.children == 'no'%>
+  <li><%= link_to 'St Bernard', static_pages_xlarge_path %></li>
+  <% elsif @survey.size == 'X-Large' && @survey.appartment == 'no' && @survey.shed == 'Heavy'  && @survey.energy == 'Moderate' && @survey.garden == 'yes' && @survey.children == 'no'%>
+  <li><%= link_to 'Bernese Mountain Dog', static_pages_xlarge_path %></li>
+  <% else %>
+  <p>There is not currently a dog in the system that matches your needs</p>
+  <% end %>
+  <br>
+  <%= link_to 'Edit', edit_survey_path(@survey) %> |
+  <%= link_to 'Back', surveys_path %>
+</div>
+
